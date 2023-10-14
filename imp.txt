@@ -1,0 +1,61 @@
+ *********************************1st imp point**************************************
+**************related to project***********************
+
+
+
+Yeh Node.js code ek server create karta hai, aur Express.js framework ka upayog URL endpoints ke 
+liye request receive karne aur response bhejne mein karta hai. Code ke kuch important parts:
+express aur axios modules ko import kiya gaya hai.
+Express.js ka ek server create kiya gaya hai.
+Server 8090 port par sun raha hai.
+/api/users endpoint par aane wale GET requests ko handle karta hai.
+axios library ka upayog kiya gaya hai JSONPlaceholder API se data fetch karne ke liye.
+Agar API request sahi se execute hoti hai to, server res.json() ke madhyam se client ko API se prapt 
+JSON data bhejta hai.
+Agar API request mein koi error hoti hai, to server res.status(500) ke sath kuch error data bhejta hai.
+Yadi koi client '/api/users' endpoint par GET request bhejta hai, to server Axios ke madhyam se 
+JSONPlaceholder API ki or request bhejta hai. API se data prapt hone par server us data ko client ko 
+response ke roop mein bhejta hai.
+Yah code essentially JSONPlaceholder API ke sath ek proxy ki tarah kaam karta hai. Client, jaise ki ek 
+web browser ya koi dusri application, '/api/users' endpoint par GET request bhejta hai, aur server us 
+request ko JSONPlaceholder API ki or forward karta hai, jahan se data prapt karke use client ko bhejta hai. 
+Aap is code ko API data ke beech mein kuch vyavasthit karne ya alag-alag data sources se data ekatrit karne ke 
+liye upayog kar sakte hain.
+
+
+
+*****************2nd point *********************
+
+Set up routes for fetching data from a public API. You can choose any public API
+you prefer (e.g., a weather API, cryptocurrency data, news API, etc.)
+
+const express = require('express');
+const app = express();
+const port = 3000; // Set your desired port
+
+// Define a route to fetch data from the API
+app.get('/api/data', (req, res) => {
+  // Fetch data from the public API here
+  // You can use libraries like Axios to make HTTP requests
+  // For example, to fetch data from a hypothetical JSON API:
+  // axios.get('https://api.example.com/data')
+  //   .then(response => {
+  //     res.json(response.data);
+  //   })
+  //   .catch(error => {
+  //     res.status(500).json({ error: 'Failed to fetch data' });
+  //   });
+
+  // Replace the above code with the API call that suits your needs
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+
+
+
+
+
